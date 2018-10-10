@@ -12,8 +12,20 @@ namespace WebDemoTurku.Controllers
     public class CustomerController : Controller
     {
 
-       public List<Customers> GetCustomers()
+        [Route("moikka")]
+        public string GetMoi() {
+            return "Moikka";
+        }
+        [Route("luvut")]
+        public int[] GetLuvut() {
+            return new int[] {1,2,3,4,5};
+        }
+      
 
+    
+
+
+       public List<Customers> GetCustomers()
        { NorthwindContext context = new NorthwindContext();
 
         List<Customers> customers=(from c in context.Customers where 
@@ -23,5 +35,5 @@ namespace WebDemoTurku.Controllers
 
        } 
 
-    }
+}    
 }
